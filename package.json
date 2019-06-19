@@ -4,9 +4,10 @@
   "main": "index.js",
   "scripts": {
     "start": "node build/index.js",
-    "clean": "rimraf build",
-    "build": "yarn clean ; babel src -d build ; cpx ./src/config/config.json ./build/config/",
-    "dev": "nodemon --exec babel-node src/index.js"
+    "clean": "rimraf build ; rimraf pkg",
+    "transpile": "yarn clean ; babel src -d build ; cpx ./src/config.json ./build/",
+    "dev": "nodemon --exec babel-node src/index.js",
+    "build": "yarn transpile ; pkg build/index.js --targets node10-win-x64 --out-path pkg"
   },
   "repository": "https://github.com/whitebird/twitch-follows-counter",
   "author": "Sebastiaan Jansen",
@@ -23,6 +24,13 @@
     "@babel/preset-env": "^7.4.5",
     "cpx": "^1.5.0",
     "nodemon": "^1.19.1",
+    "pkg": "^4.4.0",
     "rimraf": "^2.6.3"
+  },
+  "pkg": {
+    "scripts": "build/*.js",
+    "targets": [
+      "node10"
+    ]
   }
 }
