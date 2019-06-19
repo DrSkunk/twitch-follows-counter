@@ -1,0 +1,27 @@
+{
+  "name": "twitch-follows-counter",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node build/index.js",
+    "clean": "rimraf build",
+    "build": "yarn clean ; babel src -d build ; cpx ./src/config/config.json ./build/config/",
+    "dev": "nodemon --exec babel-node src/index.js"
+  },
+  "repository": "https://github.com/whitebird/twitch-follows-counter",
+  "author": "Sebastiaan Jansen",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/node": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "cpx": "^1.5.0",
+    "nodemon": "^1.19.1",
+    "rimraf": "^2.6.3"
+  }
+}
