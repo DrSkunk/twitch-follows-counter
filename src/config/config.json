@@ -1,5 +1,7 @@
 {
-  "channelId": "21499950",
+  "channelId": "37402112",
   "clientId": "hz7a5q7xivhzb22gx3gyz764beybhx",
+  "port": "/dev/tty.usbserial1",
+  "baudRate": 9600,
   "timeout": 2000
 }
